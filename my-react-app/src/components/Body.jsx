@@ -1,4 +1,4 @@
-import "./Body"
+import "../components/Cart.css"
 import mainImage from '../assets/images/main-photo.jpeg'
 
 const Body = () => {
