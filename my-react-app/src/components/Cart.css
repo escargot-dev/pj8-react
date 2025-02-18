@@ -1,6 +1,6 @@
 .cart-container {
   max-width: 1200px;
-  max-height: 1095px;
+
   margin: auto;
   padding: 10px;
   display: flex;
@@ -48,7 +48,7 @@
   Padding : 31px;
   background-color: #f6f6f6;
   border-radius: 25px;
-  max-width: 1240px;
+  
 }
 
 .card {

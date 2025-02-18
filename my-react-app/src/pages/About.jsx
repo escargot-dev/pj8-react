@@ -1,14 +1,12 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import ACart from "../components/ACart";
 
 const About = () => {
   return (
     <div>
       <Header />
-      <main>
-        <h1>À propos de nous</h1>
-        <p>Nous sommes une entreprise spécialisée dans...</p>
-      </main>
+      <ACart />
       <Footer />
     </div>
   );
