@@ -1,8 +1,10 @@
 .a-cart-container {
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
+  max-width: 1400px; 
+  margin-left: 50px;
+  margin-right: 50px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 .a-cart-image {
@@ -16,7 +18,10 @@
 .a-cart-bars {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 30px;
+  margin: 10px 40px 10px 40px;
+  padding: 10px 40px 10px 40px;
+  border-radius: 5px;
 }
 
 .a-cart-bar {
@@ -41,4 +46,11 @@
 
 .a-cart-bar:hover .a-cart-icon {
   transform: rotate(180deg);
+}
+
+@media screen and (max-width: 768px) {
+  .a-cart-bars {
+    margin: 0;
+    padding: 0;
+  }
 }

@@ -1,6 +1,6 @@
 import "../components/A-cart.css"
 import  ChevronDown  from "../assets/icones/dropdown-icone.svg";
-import { cartImage } from "../assets/images/a-props-photo.jpeg";
+import  cartImage  from "../assets/images/a-props-photo.jpeg";
 
 const ACart = () => {
   console.log("ACart est rendu");

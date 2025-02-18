@@ -2,11 +2,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 50px;
+  padding: 25px;
   background-color: #FFFFFF;
-  max-width: 1440px;
-  margin-left: 100px;
-  margin-right: 90px;
+  max-width: 1400px;
+  margin-left: 40px;
+  margin-right: 50px;
 }
 
 .logo img {
