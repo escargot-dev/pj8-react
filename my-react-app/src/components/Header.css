@@ -4,7 +4,7 @@
   align-items: center;
   padding: 25px;
   background-color: #FFFFFF;
-  max-width: 1400px;
+  max-width: 1250px;
   margin-left: 40px;
   margin-right: 50px;
 }
@@ -27,6 +27,16 @@
 }
 
 .nav a:hover {
-  color: #007bff;
   text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+  .nav ul{
+    font-size: 12px;
+    gap: 26px;
+  }
+  .header {
+    margin-left: 12px;
+    margin-right: 22px;
+  }
 }
