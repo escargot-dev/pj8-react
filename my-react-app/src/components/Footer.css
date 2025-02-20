@@ -3,9 +3,5 @@
   padding: 30px;
   background-color: #000000;
   margin-top: 20px;
-  color: #FFFFFF;
-  width: 100%;
-  z-index: 1;
-  bottom: 0;
-  position: fixed;
+  color: #FFFFFF; 
 }
