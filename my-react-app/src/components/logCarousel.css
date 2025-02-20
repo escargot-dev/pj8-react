@@ -4,6 +4,8 @@
   margin-right: 50px;
   padding: 10px;
   display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .carousel-container {
@@ -70,3 +72,54 @@
     border-radius: 10px;
   }
 }
+
+
+.logement-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logement-title {
+  width: 635px;
+  height: 77px;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+}
+
+.logement-title h2 {
+  color: #FF6060;
+  font-size: 24px;
+  margin: 0;
+}
+
+.logement-title p {
+  color: #000000;
+  font-size: 18px;
+}
+
+.logement-host {
+  width: 167px;
+  height: 64px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 30px;
+}
+
+.host-name {
+  color: #FF6060;
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 18px;
+  text-align: right;
+}
+
+.host-picture {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #C4C4C4;
+}
+

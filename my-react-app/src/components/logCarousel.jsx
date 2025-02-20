@@ -6,6 +6,7 @@ import "../components/logCarousel.css";
 
 const Carousel = () => {
   const { id } = useParams();
+  const [logement, setLogement] = useState(null);
   const [pictures, setPictures] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const totalImages = pictures.length;
@@ -14,9 +15,10 @@ const Carousel = () => {
     fetch("http://localhost:8080/api/properties")
       .then((response) => response.json())
       .then((data) => {
-        const logement = data.find((log) => log.id === id); // 🔹 Trouver le logement avec l'ID correspondant
-        if (logement) {
-          setPictures(logement.pictures || []);
+        const foundLogement = data.find((log) => log.id === id);
+        if (foundLogement) {
+          setLogement(foundLogement); 
+          setPictures(foundLogement.pictures || []);
         } else {
           console.error("Logement non trouvé");
         }
@@ -52,6 +54,20 @@ const Carousel = () => {
         </button>
         <div className="carousel-indicator">
           {totalImages > 0 ? `${currentIndex + 1} / ${totalImages}` : "0 / 0"}
+        </div>
+      </div>
+
+      <div className="logement-info">
+        {/* Titre et localisation */}
+        <div className="logement-title">
+          <h2>{logement.title}</h2>
+          <p>{logement.location}</p>
+        </div>
+
+        {/* Hôte */}
+        <div className="logement-host">
+          <p className="host-name">{logement.host.name}</p>
+          <img className="host-picture" src={logement.host.picture} alt={logement.host.name} />
         </div>
       </div>
 
