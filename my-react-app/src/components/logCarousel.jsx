@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import arrowBack from "../assets/icones/arrow-back.svg";
 import arrowRight from "../assets/icones/arrow-droit.svg";
 import "../components/logCarousel.css";
 
 const Carousel = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [logement, setLogement] = useState(null);
   const [pictures, setPictures] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -20,11 +21,11 @@ const Carousel = () => {
           setLogement(foundLogement); 
           setPictures(foundLogement.pictures || []);
         } else {
-          console.error("Logement non trouvé");
+          navigate("/not-found");
         }
       })
       .catch((error) => console.error("Error fetching pictures:", error));
-  }, [id]);
+  }, [id,navigate]);
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % totalImages);
@@ -35,7 +36,7 @@ const Carousel = () => {
       prevIndex === 0 ? totalImages - 1 : prevIndex - 1
     );
   };
-
+  if (!logement) { return <p>Chargement...</p>; }
   return (
     <div className="fiche-log-content">
       <div className="carousel-container">
