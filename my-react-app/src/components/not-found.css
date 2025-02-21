@@ -38,4 +38,7 @@
   .redirige a {
     font-size: 14px;
   }
+  .main-container {
+    gap: 113px;
+  }
 }
