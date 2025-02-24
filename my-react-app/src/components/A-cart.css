@@ -23,53 +23,40 @@
   padding: 10px 40px 10px 40px;
   border-radius: 5px;
 }
-
-.a-cart-bar {
+.bar-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #FF6060;
-  color: white;
-  padding: 15px;
-  border-radius: 8px;
+  width: 100%;
+  padding: 10px;
+  background: #FF6060;
+  border: none;
   cursor: pointer;
-  position: relative;
+  font-size: 20px;
+  font-weight: 700;
+  color: #FFFFFF;
 }
-
-.a-cart-title {
-  font-size: 18px;
-  font-weight: bold;
-}
-.a-cart-bar div {
-  display: flex;
-  justify-content: flex-end; 
-  align-items: center;
+.bar-item {
+  width: 100%;
+  background-color: #FF6060;
+  border-radius: 5px;
+  overflow: hidden;
 }
 .a-cart-icon {
-  position: absolute; /* Positionnement absolu par rapport à .a-cart-bar */
-  right: 15px;
   transition: transform 0.3s ease;
 }
-
 .a-cart-icon.rotate {
   transform: rotate(180deg);
 }
 /* Fenêtre flottante transparente */
-.a-cart-content {
-  width: 80%;
+.icone-content {
+  width: 97%;
   background: rgba(246, 246, 246, 0.45); /* Blanc avec opacité */
   color: black; /* Texte noir */
   padding: 10px;
-  border-radius: 5px;
+  text-align: left;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Effet de flottaison */
-  z-index: 10; /* S'assure qu'il passe au-dessus */
   transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-/* Affichage du contenu quand ouvert */
-.a-cart-content.open {
-  opacity: 1;
-  transform: translateY(-150px);
 }
 
 

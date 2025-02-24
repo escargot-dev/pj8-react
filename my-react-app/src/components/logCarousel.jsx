@@ -63,36 +63,35 @@ const Carousel = () => {
           {totalImages > 0 ? `${currentIndex + 1} / ${totalImages}` : "0 / 0"}
         </div>
       </div>
-
-      <div className="logement-info">
-        {/* Titre et localisation */}
-        <div className="logement-title">
-          <h2>{logement.title}</h2>
-          <p>{logement.location}</p>
-        </div>
-
-        {/* Hôte */}
-        <div className="logement-host">
-          <p className="host-name">{logement.host.name}</p>
-          <img className="host-picture" src={logement.host.picture} alt={logement.host.name} />
-        </div>
-      </div>
-
-        <div className="logement-tags-rating">
-          {/* Tags */}
-          <div className="tags-container">
-            {logement.tags.map((tag, index) => (
-              <span key={index} className="tag">{tag}</span>
-            ))}
+      
+      <div className="infos-container">
+        <div className="logement-info">
+          {/* Titre et localisation */}
+          <div className="logement-title">
+            <h2>{logement.title}</h2>
+            <p>{logement.location}</p>
+            {/* Tags */}
+            <div className="tags-container">
+              {logement.tags.map((tag, index) => (
+                <span key={index} className="tag">{tag}</span>
+             ))}
+            </div>
           </div>
+          <div className="logement-host-rating">
+            {/* Hôte */}
+            <div className="logement-host">
+              <p className="host-name">{logement.host.name}</p>
+              <img className="host-picture" src={logement.host.picture} alt={logement.host.name} />
+            </div>
 
-          {/* Rating */}
-          <div className="rating-container">
-            {[1, 2, 3, 4, 5].map((star) => (
-              <span key={star} className={`star ${star <= logement.rating ? "active" : "inactive"}`}>
-                ★
-              </span>
-            ))}
+            {/* Rating */}
+            <div className="rating-container">
+              {[1, 2, 3, 4, 5].map((star) => (
+                <span key={star} className={`star ${star <= logement.rating ? "active" : "inactive"}`}>
+                  ★
+                </span>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -122,6 +121,7 @@ const Carousel = () => {
           </div>
         </div>
       </div>
+    </div>  
   );
 };
 

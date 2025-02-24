@@ -19,17 +19,12 @@ const ACart = () => {
       {/* Groupe de barres */}
       <div className="a-cart-bars">
         {collapsibleData.map((section, index) => (
-          <div key={index} className="a-cart-bar">
-            <span className="a-cart-title">{section.title}</span>
-            <div onClick={() => toggleCollapse(index)}>
+          <div key={index} className="bar-item">
+            <button className="bar-header" onClick={() => toggleCollapse(index)}>{section.title}
               <img src={ChevronDown} alt="Icône dropdown" className={`a-cart-icon ${openIndex === index ? "rotate" : ""}`} />
-            </div>
-
-            {openIndex === index && (
-              <div className={`a-cart-content ${openIndex === index ? "open" : ""}`}>
-                <p>{section.content}</p>
-              </div>
-            )}
+            </button>
+            {openIndex === index && <p className="icone-content">{section.content}</p>}
+          
           </div>
         ))}
        </div>

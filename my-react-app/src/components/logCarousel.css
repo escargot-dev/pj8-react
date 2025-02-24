@@ -59,25 +59,10 @@
   border-radius: 10px;
 }
 
-@media screen and (max-width: 768px) {
-  .fiche-log-content{
-    margin-left: 30px;
-    margin-right: 30px;
-  }
-  .carousel-container {
-    height: 250px;
-    border-radius: 10px;
-  }
-  .carousel-image{
-    border-radius: 10px;
-  }
-}
-
 
 .logement-info {
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 .logement-title {
@@ -86,12 +71,13 @@
   background: transparent;
   display: flex;
   flex-direction: column;
+  gap: 20px;
 }
 
 .logement-title h2 {
   color: #FF6060;
   font-size: 24px;
-  margin: 0;
+  margin:0;
 }
 
 .logement-title p {
@@ -100,20 +86,19 @@
 }
 
 .logement-host {
-  width: 167px;
-  height: 64px;
   display: flex;
   flex-direction: row;
   align-items: flex-end;
-  gap: 30px;
+  gap: 20px;
 }
 
 .host-name {
   color: #FF6060;
-  font-family: Montserrat;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 20px;
   text-align: right;
+  width: 55%;
+
 }
 
 .host-picture {
@@ -123,10 +108,11 @@
   background: #C4C4C4;
 }
 
-.logement-tags-rating {
+.logement-host-rating {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  align-items: flex-end;
   margin-top: 10px;
 }
 
@@ -144,7 +130,7 @@
   font-size: 14px;
   line-height: 19.96px;
   text-align: center;
-  width: 115px;
+  width: 130px;
   height: 25px;
   border-radius: 10px;
   display: flex;
@@ -190,11 +176,11 @@
   border: none;
   color: white;
   font-size: 18px;
-  font-weight: bold;
+  font-weight: 400;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px;
+  padding: 10px;
   cursor: pointer;
 }
 
@@ -208,9 +194,10 @@
 
 .accordion-content {
   padding: 15px;
-  background-color: white;
+  background: rgba(246, 246, 246, 0.45);
   color: #333;
   font-size: 16px;
+  margin-top: 30px;
 }
 
 .accordion-content ul {
@@ -222,3 +209,43 @@
   margin-bottom: 5px;
 }
 
+@media screen and (max-width: 768px) {
+  .fiche-log-content{
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+  .carousel-container {
+    height: 250px;
+    border-radius: 10px;
+  }
+  .carousel-image{
+    border-radius: 10px;
+  }
+  .logement-info,
+  .logement-tags-rating,
+  .accordion-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .logement-host-rating {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 70px;
+    margin-top: 50px;
+  }
+  .logement-host{
+    gap: 30px;
+  }
+
+  .accordion-item {
+    width: 100%;
+  }
+  .logement-title h2{
+    font-size: 18px;
+  }
+  .logement-title p {
+    font-size: 16px;
+  }
+}
