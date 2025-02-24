@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import arrowBack from "../assets/icones/arrow-back.svg";
 import arrowRight from "../assets/icones/arrow-droit.svg";
+import dropdownIcon from "../assets/icones/dropdown-icone.svg";
 import "../components/logCarousel.css";
 
 const Carousel = () => {
@@ -10,6 +11,8 @@ const Carousel = () => {
   const [logement, setLogement] = useState(null);
   const [pictures, setPictures] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isDescriptionOpen, setIsDescriptionOpen] = useState(false);
+  const [isEquipmentsOpen, setIsEquipmentsOpen] = useState(false);
   const totalImages = pictures.length;
 
   useEffect(() => {
@@ -37,6 +40,9 @@ const Carousel = () => {
     );
   };
   if (!logement) { return <p>Chargement...</p>; }
+
+  const rating = Number(logement.rating);
+
   return (
     <div className="fiche-log-content">
       <div className="carousel-container">
@@ -72,7 +78,50 @@ const Carousel = () => {
         </div>
       </div>
 
-    </div>
+        <div className="logement-tags-rating">
+          {/* Tags */}
+          <div className="tags-container">
+            {logement.tags.map((tag, index) => (
+              <span key={index} className="tag">{tag}</span>
+            ))}
+          </div>
+
+          {/* Rating */}
+          <div className="rating-container">
+            {[1, 2, 3, 4, 5].map((star) => (
+              <span key={star} className={`star ${star <= logement.rating ? "active" : "inactive"}`}>
+                ★
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <div className="accordion-container">
+          {/* Description */}
+          <div className="accordion-item">
+            <button className="accordion-header" onClick={() => setIsDescriptionOpen(!isDescriptionOpen)}>
+              Description
+              <img src={dropdownIcon} alt="Toggle" className={`dropdown-icon ${isDescriptionOpen ? "open" : ""}`} />
+            </button>
+            {isDescriptionOpen && <p className="accordion-content">{logement.description}</p>}
+          </div>
+
+          {/* Équipements */}
+          <div className="accordion-item">
+            <button className="accordion-header" onClick={() => setIsEquipmentsOpen(!isEquipmentsOpen)}>
+              Équipements
+              <img src={dropdownIcon} alt="Toggle" className={`dropdown-icon ${isEquipmentsOpen ? "open" : ""}`} />
+            </button>
+            {isEquipmentsOpen && (
+              <ul className="accordion-content">
+                {logement.equipments.map((equip, index) => (
+                  <li key={index}>{equip}</li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </div>
+      </div>
   );
 };
 
