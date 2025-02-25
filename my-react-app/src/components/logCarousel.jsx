@@ -53,17 +53,21 @@ const Carousel = () => {
             className="carousel-image"
           />
         )}
-        <button className="carousel-button left" onClick={prevSlide}>
-          <img src={arrowBack} alt="Previous" className="arrow-icon" />
-        </button>
-        <button className="carousel-button right" onClick={nextSlide}>
-          <img src={arrowRight} alt="Next" className="arrow-icon" />
-        </button>
+        {totalImages > 1 && (
+          <button className="carousel-button left" onClick={prevSlide}>
+            <img src={arrowBack} alt="Previous" className="arrow-icon" />
+          </button>
+        )}
+        {totalImages > 1 && (
+          <button className="carousel-button right" onClick={nextSlide}>
+            <img src={arrowRight} alt="Next" className="arrow-icon" />
+          </button>
+        )}
         <div className="carousel-indicator">
           {totalImages > 0 ? `${currentIndex + 1} / ${totalImages}` : "0 / 0"}
         </div>
       </div>
-      
+
       <div className="infos-container">
         <div className="logement-info">
           {/* Titre et localisation */}
