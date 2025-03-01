@@ -9,5 +9,20 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     setupFiles: './setupTests.js',
+    coverage: {
+      provider: 'v8', // Ou 'istanbul'
+      reporter: ['text', 'lcov'],
+      include: ['src/components/**/*.{js,jsx,ts,tsx}'], // Cible uniquement le dossier components
+      exclude: ['src/pages/**', 'src/routes/**'] // Exclut pages et routes
+    }
   },
-})
+  server: {  // Ajout du proxy ici
+    proxy: {
+      '/api': {  
+        target: 'http://localhost:8080', // Adresse de ton backend
+        changeOrigin: true,
+        secure: false
+      },
+    },
+  }
+});
