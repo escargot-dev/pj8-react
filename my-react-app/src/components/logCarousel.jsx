@@ -4,6 +4,7 @@ import arrowBack from "../assets/icones/arrow-back.svg";
 import arrowRight from "../assets/icones/arrow-droit.svg";
 import dropdownIcon from "../assets/icones/dropdown-icone.svg";
 import "../components/logCarousel.css";
+import Collapse from './Collapse';
 
 const Carousel = () => {
   const { id } = useParams();
@@ -11,8 +12,6 @@ const Carousel = () => {
   const [logement, setLogement] = useState(null);
   const [pictures, setPictures] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isDescriptionOpen, setIsDescriptionOpen] = useState(false);
-  const [isEquipmentsOpen, setIsEquipmentsOpen] = useState(false);
   const totalImages = pictures.length;
 
   useEffect(() => {
@@ -101,28 +100,18 @@ const Carousel = () => {
 
         <div className="accordion-container">
           {/* Description */}
-          <div className="accordion-item">
-            <button className="accordion-header" onClick={() => setIsDescriptionOpen(!isDescriptionOpen)}>
-              Description
-              <img src={dropdownIcon} alt="Toggle" className={`dropdown-icon ${isDescriptionOpen ? "open" : ""}`} />
-            </button>
-            {isDescriptionOpen && <p className="accordion-content">{logement.description}</p>}
-          </div>
+          <Collapse title="Description" icon={dropdownIcon}>
+            <p>{logement.description}</p>
+          </Collapse>
 
           {/* Équipements */}
-          <div className="accordion-item">
-            <button className="accordion-header" onClick={() => setIsEquipmentsOpen(!isEquipmentsOpen)}>
-              Équipements
-              <img src={dropdownIcon} alt="Toggle" className={`dropdown-icon ${isEquipmentsOpen ? "open" : ""}`} />
-            </button>
-            {isEquipmentsOpen && (
-              <ul className="accordion-content">
-                {logement.equipments.map((equip, index) => (
-                  <li key={index}>{equip}</li>
-                ))}
-              </ul>
-            )}
-          </div>
+          <Collapse title="Équipements" icon={dropdownIcon}>
+            <ul>
+              {logement.equipments.map((equip, index) => (
+                <li key={index}>{equip}</li>
+              ))}
+            </ul>
+          </Collapse>
         </div>
       </div>
     </div>  

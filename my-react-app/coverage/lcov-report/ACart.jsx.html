@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">91.66% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>26/26</span>
+                <span class='fraction'>22/24</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>9/9</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">91.66% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>26/26</span>
+                <span class='fraction'>22/24</span>
             </div>
         
             
@@ -95,45 +95,40 @@
 <a name='L30'></a><a href='#L30'>30</a>
 <a name='L31'></a><a href='#L31'>31</a>
 <a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a>
-<a name='L34'></a><a href='#L34'>34</a>
-<a name='L35'></a><a href='#L35'>35</a>
-<a name='L36'></a><a href='#L36'>36</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L33'></a><a href='#L33'>33</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { useState } from "react";
+import Collapse from './Collapse';
 import "../components/A-cart.css"
 import  ChevronDown  from "../assets/icones/dropdown-icone.svg";
 import  cartImage  from "../assets/images/a-props-photo.jpeg";
@@ -142,9 +137,9 @@ import collapsibleData from "../data/collapsibleData.json";
 const ACart = () =&gt; {
   const [openIndex, setOpenIndex] = useState(null);
 &nbsp;
-  const toggleCollapse = (index) =&gt; {
-    setOpenIndex(openIndex === index ? null : index);
-  };
+  const toggleCollapse = <span class="fstat-no" title="function not covered" >(index) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    setOpenIndex(openIndex === index ? null : index);</span>
+<span class="cstat-no" title="statement not covered" >  };</span>
 &nbsp;
   return (
     &lt;div className="a-cart-container"&gt;
@@ -153,14 +148,10 @@ const ACart = () =&gt; {
 &nbsp;
       {/* Groupe de barres */}
       &lt;div className="a-cart-bars"&gt;
-        {collapsibleData.map((section, index) =&gt; (
-          &lt;div key={index} className="bar-item"&gt;
-            &lt;button className="bar-header" onClick={() =&gt; toggleCollapse(index)}&gt;{section.title}
-              &lt;img src={ChevronDown} alt="Icône dropdown" className={`a-cart-icon ${openIndex === index ? "rotate" : ""}`} /&gt;
-            &lt;/button&gt;
-            {openIndex === index &amp;&amp; &lt;p className="icone-content"&gt;{section.content}&lt;/p&gt;}
-          
-          &lt;/div&gt;
+      {collapsibleData.map((section, index) =&gt; (
+          &lt;Collapse key={index} title={section.title} icon={ChevronDown}&gt;
+            &lt;p&gt;{section.content}&lt;/p&gt;
+          &lt;/Collapse&gt;
         ))}
        &lt;/div&gt;
     &lt;/div&gt;
@@ -175,7 +166,7 @@ export default ACart;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-03-01T22:45:15.971Z
+                at 2025-03-03T17:03:44.539Z
             </div>
         <script src="prettify.js"></script>
         <script>
