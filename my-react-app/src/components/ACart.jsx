@@ -6,12 +6,6 @@ import  cartImage  from "../assets/images/a-props-photo.jpeg";
 import collapsibleData from "../data/collapsibleData.json";
 
 const ACart = () => {
-  const [openIndex, setOpenIndex] = useState(null);
-
-  const toggleCollapse = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
-
   return (
     <div className="a-cart-container">
       {/* Image */}
