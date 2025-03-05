@@ -1,6 +1,6 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Carousel from "../components/logCarousel";
+import LogCarousel from "../components/logCarousel";
 import { useParams } from "react-router-dom";
 
 const FicheLogement = () => {
@@ -9,7 +9,7 @@ const FicheLogement = () => {
   return (
     <div>
       <Header />
-      <Carousel />
+      <LogCarousel />
       <Footer />
     </div>
   );
