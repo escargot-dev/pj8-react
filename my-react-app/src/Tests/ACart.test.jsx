@@ -6,22 +6,25 @@ describe('ACart', () => {
   it('should toggle collapse content on click', () => {
     render(<ACart />);
 
-    // Trouve le bouton de la première section du collapsus
-    const firstButton = screen.getAllByRole('button')[0];
+     // Teste chaque section collapsible
+     collapsibleData.forEach((section, index) => {
+      // Trouve le bouton de la section
+      const button = screen.getAllByRole('button')[index];
 
     // Vérifie si la section est fermée au début
-    expect(screen.queryByText(collapsibleData[0].content)).not.toBeInTheDocument();
+    expect(screen.queryByText(section.content)).not.toBeInTheDocument();
 
     // Clique sur le bouton pour ouvrir la section
-    fireEvent.click(firstButton);
+    fireEvent.click(button);
 
     // Vérifie si la section est ouverte après le clic
-    expect(screen.getByText(collapsibleData[0].content)).toBeInTheDocument();
+    expect(screen.getByText(section.content)).toBeInTheDocument();
 
     // Clique à nouveau pour fermer la section
-    fireEvent.click(firstButton);
+    fireEvent.click(button);
 
     // Vérifie si le contenu de la première section est caché après le deuxième clic
-    expect(screen.queryByText(collapsibleData[0].content)).not.toBeInTheDocument();
+    expect(screen.queryByText(section.content)).not.toBeInTheDocument();
   });
+ });
 });

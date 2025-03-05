@@ -1,4 +1,3 @@
-// Carousel.test.jsx
 import { render, screen, fireEvent } from "@testing-library/react";
 import Carousel from "../components/Carousel";
 
@@ -46,4 +45,25 @@ import Carousel from "../components/Carousel";
     expect(prevButton).not.toBeInTheDocument();
     expect(nextButton).not.toBeInTheDocument();
   });
+
+  test('loops back to the first slide after the last slide', () => {
+    const { getByAltText } = render(<Carousel pictures={mockPictures} />);
+    const nextButton = getByAltText('Next').closest('button');
+  
+    // Navigue jusqu'à la dernière image
+    fireEvent.click(nextButton);
+    fireEvent.click(nextButton);
+  
+    // Vérifie que la première image est affichée après la dernière
+    fireEvent.click(nextButton);
+    const image = screen.getByAltText('Slide 1');
+    expect(image).toHaveAttribute('src', 'image1.jpg');
+  });
+  
+  test('handles empty pictures array gracefully', () => {
+    const { queryByAltText } = render(<Carousel pictures={[]} />);
+    const image = queryByAltText('Slide 1');
+    expect(image).not.toBeInTheDocument();
+  });
+  
 });
