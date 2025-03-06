@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../components/Cart.css"
-import mainImage from '../assets/images/main-photo.jpeg'
+import mainImage from '../assets/images/main-image.svg'
+import Banner from './Banner';
 
 const Body = () => {
   const [logements, setLogements] = useState([]);
@@ -33,10 +34,7 @@ const Body = () => {
 
   return (
     <div className="cart-container">
-      <div className="banner">
-        <img src={mainImage} alt="Bannière" className="banner-img" />
-        <h1 className="banner-text">Chez vous, partout et ailleurs</h1>
-      </div>
+      <Banner imageSrc={mainImage} text="Chez vous, partout et ailleurs" />
 
       {/* Galerie des logements */}
       <div className="gallery">

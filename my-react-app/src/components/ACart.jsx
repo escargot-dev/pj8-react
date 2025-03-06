@@ -2,14 +2,15 @@ import React, { useState } from "react";
 import Collapse from './Collapse';
 import "../components/A-cart.css"
 import  ChevronDown  from "../assets/icones/dropdown-icone.svg";
-import  cartImage  from "../assets/images/a-props-photo.jpeg";
+import  cartImage  from "../assets/images/AproposImage.svg";
 import collapsibleData from "../data/collapsibleData.json";
+import Banner from "./Banner";
 
 const ACart = () => {
   return (
     <div className="a-cart-container">
       {/* Image */}
-      <img src={cartImage} alt="À propos" className="a-cart-image" />
+      <Banner imageSrc={cartImage} />
 
       {/* Groupe de barres */}
       <div className="a-cart-bars">

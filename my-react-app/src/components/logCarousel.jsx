@@ -4,6 +4,8 @@ import dropdownIcon from "../assets/icones/dropdown-icone.svg";
 import "../components/logCarousel.css";
 import Collapse from './Collapse';
 import Carousel from './Carousel';
+import activeStar from "../assets/images/star-active 1.svg"
+import inactiveStar from "../assets/images/star-inactive 1.svg"
 
 const LogCarousel = () => {
   const { id } = useParams();
@@ -58,9 +60,12 @@ const LogCarousel = () => {
             {/* Rating */}
             <div className="rating-container">
               {[1, 2, 3, 4, 5].map((star) => (
-                <span key={star} className={`star ${star <= logement.rating ? "active" : "inactive"}`}>
-                  ★
-                </span>
+                <img
+                key={star}
+                src={star <= rating ? activeStar : inactiveStar}
+                alt={star <= rating ? "Active star" : "Inactive star"}
+                className="star"
+              />
               ))}
             </div>
           </div>
@@ -68,12 +73,12 @@ const LogCarousel = () => {
 
         <div className="accordion-container">
           {/* Description */}
-          <Collapse title="Description" icon={dropdownIcon}>
+          <Collapse key="description" title="Description" icon={dropdownIcon}>
             <p>{logement.description}</p>
           </Collapse>
 
           {/* Équipements */}
-          <Collapse title="Équipements" icon={dropdownIcon}>
+          <Collapse key="equipments" title="Équipements" icon={dropdownIcon}>
             <ul>
               {logement.equipments.map((equip, index) => (
                 <li key={index}>{equip}</li>

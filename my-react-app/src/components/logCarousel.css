@@ -141,17 +141,6 @@
   gap: 5px;
 }
 
-.star {
-  font-size: 20px;
-}
-
-.star.active {
-  color: #FF6060;
-}
-
-.star.inactive {
-  color: #E3E3E3;
-}
 .accordion-container {
   display: flex;
   flex-direction: row;
