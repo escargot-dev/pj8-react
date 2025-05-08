@@ -1,6 +1,7 @@
 {
   "name": "my-react-app",
   "private": true,
+  "homepage": "https://escargot-dev.github.io/pj8-react",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
