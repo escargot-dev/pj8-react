@@ -4,6 +4,7 @@ import react from '@vitejs/plugin-react'
 console.log("✅ Vite React Plugin chargé");
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/pj8-react/',
   plugins: [react()],
   test: {
     globals: true,

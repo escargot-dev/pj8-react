@@ -7,7 +7,7 @@ import FicheLogement from "../pages/FicheLogement";
 
 function AppRouter() {
   return (
-    <Router>
+    <Router basename="/pj8-react">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
