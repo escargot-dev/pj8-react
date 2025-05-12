@@ -20,7 +20,7 @@ export default defineConfig({
   server: {  // Ajout du proxy ici
     proxy: {
       '/api': {  
-        target: 'http://localhost:8080', // Adresse de ton backend
+        target: 'http://localhost:8080', // Adresse de mon backend
         changeOrigin: true,
         secure: false
       },
