@@ -7,13 +7,21 @@
   background-color: #FFFFFF;
 }
 body {
+  font-weight: 500;
   margin: 0;
   padding: 0;
   height: 100%;
   display: flex;
   flex-direction: column;
 }
-
+a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 34.22px;
+  text-align: right;
+  cursor: pointer;
+}
 h1 {
   font-size: 3.2em;
   line-height: 1.1;

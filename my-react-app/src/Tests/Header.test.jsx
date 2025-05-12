@@ -11,6 +11,7 @@ test("affiche le logo et les liens de navigation", () => {
 
   const logo = screen.getByAltText("Logo");
   expect(logo).toBeInTheDocument();
+  expect(logo.closest("a")).toHaveAttribute("href", "/");
 
   const homeLink = screen.getByRole("link", { name: "Accueil" });
   const aboutLink = screen.getByRole("link", { name: "À propos" });

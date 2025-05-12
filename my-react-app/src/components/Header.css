@@ -11,8 +11,11 @@
 
 .logo img {
   height: 40px;
+  cursor: pointer;
 }
-
+.logo {
+  cursor: pointer;
+}
 .nav ul {
   display: flex;
   gap: 57px;

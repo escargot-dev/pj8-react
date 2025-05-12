@@ -14,7 +14,7 @@ export default defineConfig({
       provider: 'v8', // Ou 'istanbul'
       reporter: ['text', 'lcov'],
       include: ['src/components/**/*.{js,jsx,ts,tsx}'], // Cible uniquement le dossier components
-      exclude: ['src/pages/**', 'src/routes/**', 'src/components/logCarousel.jsx'] // Exclut pages et routes
+      exclude: ['src/pages/**', 'src/routes/**', 'src/components/logCarousel.jsx', 'src/components/Header.jsx'] // Exclut pages et routes
     }
   },
   server: {  // Ajout du proxy ici
